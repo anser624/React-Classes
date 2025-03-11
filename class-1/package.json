@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/anser624/React-Classes/issues"
   },
-  "homepage": "https://github.com/anser624/React-Classes#readme"
+  "homepage": "https://github.com/anser624/React-Classes#readme",
+  "devDependencies": {
+    "vite": "^6.2.1"
+  }
 }
