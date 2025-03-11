@@ -3,10 +3,10 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid ">
-          <a className="navbar-brand" href="#">
-            React-Classes!
+      <nav className="navbar navbar-expand-lg bg-dark border-bottom position-sticky top-0">
+        <div className="container-fluid">
+          <a className="navbar-brand  text-white" href="#">
+            React-Assignment-1
           </a>
           <button
             className="navbar-toggler"
@@ -22,12 +22,12 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <a className="nav-link active text-white" aria-current="page" href="#">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
+                <a className="nav-link disabled text-white" aria-disabled="true">
                   About
                 </a>
               </li>

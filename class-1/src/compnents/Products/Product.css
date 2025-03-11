@@ -1,0 +1,14 @@
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 50px;
+    /* background-color: aquamarine; */
+    justify-content: space-around;
+    gap: 15px;
+    /* margin: 0px 150px; */
+}
+.h1{
+    font-size: 3.5rem;
+    font-weight: bolder;
+    text-align: center;
+}
