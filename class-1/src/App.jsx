@@ -1,16 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./compnents/Navbar";
 import About from "./compnents/About";
 import Footer from "./compnents/Footer";
 import Hero from "./compnents/hero/Hero";
-import Card from "./compnents/Card/Card";
 import Product from "./compnents/Products/Product";
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <>
       <Navbar />
