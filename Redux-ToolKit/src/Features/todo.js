@@ -3,32 +3,9 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = {
   todoFeature: [
     { id: nanoid(), 
-    name: "Todo-1"
+    name: "Demo Task!"
     },
-    { id: nanoid(), 
-    name: "Todo-2"
-    },
-    { id: nanoid(), 
-    name: "Todo-3"
-    },
-    { id: nanoid(), 
-    name: "Todo-3"
-    },
-    { id: nanoid(), 
-    name: "Todo-3"
-    },
-    { id: nanoid(), 
-    name: "Todo-3"
-    },
-    { id: nanoid(), 
-    name: "Todo-3"
-    },
-    { id: nanoid(), 
-    name: "Todo-3"
-    },
-    { id: nanoid(), 
-    name: "Todo-3"
-    },
+
 ],
 
 };
