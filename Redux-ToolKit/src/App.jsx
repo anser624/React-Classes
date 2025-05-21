@@ -23,12 +23,19 @@ import {
 
 import { Input } from "./components/ui/input";
 import { useState } from "react";
-import bgimg from "./assets/bgimg.jpg";
+// import { collection, getDocs } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-firestore.js";
+// import {db} from "./Firebase/firebaseconfig";
+
+
 function App() {
+  
+
+  
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
   const todos = useSelector((state) => state.todoFeature);
   const [alert, setalert] = useState(false);
+
 
   const handleUpdate = (id, name) => {
     console.log(id, name);
@@ -110,48 +117,3 @@ function App() {
 }
 
 export default App;
-
-// <div
-//               key={item.id}
-//               className="flex justify-between items-center p-2 bg-gray-200 rounded">
-//               <p>{item.name}</p>
-//               <div className="flex gap-2">
-//                 <button
-//                   onClick={() => dispatch(delTodo(item.id))}
-//                   className="bg-red-500 text-white px-2 py-1 rounded"
-//                 >
-//                   Delete
-//                 </button>
-//                 <button onClick={() => { dispatch(updateTodo(item.id ,input))}}
-//                   className="bg-blue-500 text-white px-2 py-1 rounded">
-//                   <AlertDialog>
-//                     <AlertDialogTrigger>Update</AlertDialogTrigger>
-//                     <AlertDialogContent>
-//                       <AlertDialogHeader>
-//                         <AlertDialogTitle>Update</AlertDialogTitle>
-//                         <AlertDialogDescription>
-//                           <Input
-//                             type="text"
-//                             required
-//                             className={"text-black"}
-//                             value={input}
-//                             onChange={(e) => setInput(e.target.value)}
-//                             placeholder="Add Task"
-//                           />
-//                           {alert && <p className="text-red-600 font-medium text-center text-md my-3">Please Enter A Value </p>}
-//                         </AlertDialogDescription>
-//                       </AlertDialogHeader>
-//                       <AlertDialogFooter>
-//                         <AlertDialogAction
-//                         onClick={() => handleUpdate(item.id , input)}
-//                           className="bg-blue-500
-//                       hover:bg-blue-800 cursor-pointer text-white"
-//                         >
-//                           Update !
-//                         </AlertDialogAction>
-//                       </AlertDialogFooter>
-//                     </AlertDialogContent>
-//                   </AlertDialog>
-//                 </button>
-//               </div>
-//             </div>
