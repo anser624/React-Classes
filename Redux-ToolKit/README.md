@@ -1,42 +1,39 @@
 # Redux Toolkit Todo Application
 
-A complete Todo application built with React and Redux Toolkit featuring local storage persistence.
+A complete task management solution built with React and Redux Toolkit featuring persistent local storage.
 
-## Live Demo
+## 🌐 Live Demo
 
-Access the live version here: [Redux Toolkit Todo App]([https://redux-toolkit-ansar.netlify.app/login](https://redux-toolkit-ansar.netlify.app/))
+Experience the app live: [Redux Toolkit Todo App](https://redux-toolkit-ansar.netlify.app/)
 
-## Key Features
+## ✨ Key Features
 
-- **Todo Management**
-  - Add new tasks with descriptions
-  - Edit existing todos
-  - Delete tasks when completed
+- **Full CRUD Operations**
+  - Create, Read, Update, Delete todos
+  - Dual-input system (title + description)
 - **Data Persistence**
-  - Automatically saves to browser's localStorage
-  - Maintains todos between sessions
+  - Automatic localStorage saving
+  - Session-to-session task retention
 - **Modern UI**
-  - Clean, responsive interface
-  - Built with ShadCN components
-- **State Management**
+  - Responsive Card-based design
+  - Alert dialogs for actions
+- **Efficient State Management**
   - Redux Toolkit implementation
-  - Efficient state updates
+  - Optimized reducers
 
-## Technology Stack
+## 🛠 Technology Stack
 
-- Frontend: React.js
-- State Management: Redux Toolkit
-- Styling: Tailwind CSS
-- UI Components: ShadCN
-- Build Tool: Vite
+| Category        | Technologies Used |
+|-----------------|-------------------|
+| Core Framework  | React.js          |
+| State Management| Redux Toolkit     |
+| Styling         | Tailwind CSS      |
+| UI Components   | ShadCN            |
+| Build Tool      | Vite              |
 
-## Getting Started
+## 🚀 Quick Start
 
-### Prerequisites
-- Node.js (v14 or later)
-- npm or yarn
-
-### Installation
-1. Clone the repository:
+1. **Clone the repository**
 ```bash
 git clone https://github.com/anser624/React-Classes.git
+cd React-Classes/Redux-ToolKit
