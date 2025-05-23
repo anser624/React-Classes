@@ -1,12 +1,42 @@
-# React + Vite
+# Redux Toolkit Todo Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complete Todo application built with React and Redux Toolkit featuring local storage persistence.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Access the live version here: [Redux Toolkit Todo App](https://redux-toolkit-ansar.netlify.app/login)
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Todo Management**
+  - Add new tasks with descriptions
+  - Edit existing todos
+  - Delete tasks when completed
+- **Data Persistence**
+  - Automatically saves to browser's localStorage
+  - Maintains todos between sessions
+- **Modern UI**
+  - Clean, responsive interface
+  - Built with ShadCN components
+- **State Management**
+  - Redux Toolkit implementation
+  - Efficient state updates
+
+## Technology Stack
+
+- Frontend: React.js
+- State Management: Redux Toolkit
+- Styling: Tailwind CSS
+- UI Components: ShadCN
+- Build Tool: Vite
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/anser624/React-Classes.git
