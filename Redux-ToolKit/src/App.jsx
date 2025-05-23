@@ -19,25 +19,21 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog";
 
 import { Input } from "./components/ui/input";
 import { useState } from "react";
 // import { collection, getDocs } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-firestore.js";
 // import {db} from "./Firebase/firebaseconfig";
 
-
 function App() {
-  
-
-  
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
-  const todos = useSelector((state) => state.todoFeature);
+  const [text, setText] = useState("");
+  const todos = useSelector((state) => state.todo.todoFeature);
   const [alert, setalert] = useState(false);
 
-
-  const handleUpdate = (id, name) => {
+  const handleUpdate = (id, name,text) => {
     console.log(id, name);
     setInput("");
     if (input === "") {
@@ -49,10 +45,14 @@ function App() {
       return;
     }
 
-    dispatch(updateTodo({ id, name }));
+    dispatch(updateTodo({ id, name ,text}));
   };
+
+  // Browser console mein chalaen
+  console.log(todos);
+
   return (
-    <div className="bg-[url('')] bg-cover bg-center bg-no-repeat h-full py-20">
+    <div className="bg-cover bg-center bg-no-repeat h-full py-10">
       <div className="flex justify-center my-10">
         <LoginForm />
       </div>
@@ -60,55 +60,73 @@ function App() {
         <h1 className="text-6xl font-bold text-center">Todo List</h1>
         <div className="flex flex-wrap ms-7 gap-5 p-10">
           {todos?.map((item) => (
-           <div key={item.id} className="gap-10">
-             <Card key={item.id} className="w-96 bg-gray-200">
-              <CardHeader>
-                <CardTitle>{item.name}</CardTitle>
-                <CardDescription>Here Your Task To Do</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <button
-                   onClick={() => dispatch(delTodo(item.id))}
-                   className="bg-red-500 w-full hover:bg-red-600 cursor-pointer  text-white px-2 py-1 rounded"
-                 >
-                   Delete
-                 </button>
-              </CardContent>
-              <CardFooter>
-                <p
-                   className="bg-blue-500 text-center w-full cursor-pointer hover:bg-blue-600 text-white px-2 py-1 rounded">
-                   <AlertDialog>
-                     <AlertDialogTrigger>Update</AlertDialogTrigger>
-                     <AlertDialogContent>
-                       <AlertDialogHeader>
-                         <AlertDialogTitle>Update The Task</AlertDialogTitle>
-                         <AlertDialogDescription>
-                           <Input
-                             type="text"
-                             required
-                             className={"text-black"}
-                             value={input}
-                             onChange={(e) => setInput(e.target.value)}
-                             placeholder="Add Task"
-                           />
-                           {alert && <p className="text-red-600 font-medium text-md ms-3 my-3">Please Enter A Value </p>}
-                         </AlertDialogDescription>
-                       </AlertDialogHeader>
-                       <AlertDialogFooter>
-                         <AlertDialogAction
-                         onClick={(e) => handleUpdate(item.id , input)}
-                           className="bg-blue-500
+            <div key={item.id} className="gap-10">
+              <Card key={item.id} className="w-96 bg-gray-200">
+                <CardHeader>
+                  <CardTitle>{item.name}</CardTitle>
+                  <CardDescription
+                  className={"text-gray-500 capitalize text-xs text-balance"}
+                  >{item.text}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <button
+                    onClick={() => dispatch(delTodo(item.id))}
+                    className="bg-red-500 w-full hover:bg-red-600 cursor-pointer  text-white px-2 py-1 rounded"
+                  >
+                    Delete
+                  </button>
+                </CardContent>
+                <CardFooter>
+                  <p className="bg-blue-500 text-center w-full cursor-pointer hover:bg-blue-600 text-white px-2 py-1 rounded">
+                    <AlertDialog>
+                      <AlertDialogTrigger>Update</AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>Update The Task</AlertDialogTitle>
+                          <AlertDialogDescription className="flex flex-col gap-3">
+                            <Input
+                              type="text"
+                              required
+                              className={"text-black"}
+                              value={input}
+                              onChange={(e) => setInput(e.target.value)}
+                              placeholder="Update The Title"
+                            />
+                            {alert && (
+                              <p className="text-red-600 font-medium text-md ms-3 my-3">
+                                Please Enter A Value{" "}
+                              </p>
+                            )}
+                            <Input
+                              type="text"
+                              required
+                              className={"text-black"}
+                              value={text}
+                              onChange={(e) => setText(e.target.value)} 
+                              placeholder="Update The Description"
+                            />
+                            {alert && (
+                              <p className="text-red-600 font-medium text-md ms-3 my-3">
+                                Please Enter A Value{" "}
+                              </p>
+                            )}
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogAction
+                            onClick={(e) => handleUpdate(item.id, input,text)}
+                            className="bg-blue-500
                        hover:bg-blue-800 cursor-pointer text-white"
-                         >
-                           Update !
-                         </AlertDialogAction>
-                       </AlertDialogFooter>
-                     </AlertDialogContent>
-                   </AlertDialog>
-                 </p>
-              </CardFooter>
-            </Card>
-           </div>
+                          >
+                            Update !
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
+                  </p>
+                </CardFooter>
+              </Card>
+            </div>
           ))}
         </div>
       </div>

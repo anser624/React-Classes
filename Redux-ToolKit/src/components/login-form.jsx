@@ -15,11 +15,14 @@ import { addTodo } from "../Features/todo";
 
 export function LoginForm({ className, ...props }) {
   const [input, setInput] = useState("");
+  const [text, setText] = useState("");
   const todo = useSelector((state) => state.todoFeature);
   const dispatch = useDispatch();
   function add() {
-    dispatch(addTodo(input));
+    dispatch(addTodo({input:input, text:text}));
     setInput("");
+    setText("");
+    console.log(dispatch);
   }
 
   return (
@@ -46,6 +49,15 @@ export function LoginForm({ className, ...props }) {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Add Task"
+                />
+                <textarea
+                  type="text"
+                  cols={5}
+                  rows={3}  
+                  className={"rounded-2xl ps-3 pt-2 border-1 text-white"}
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  placeholder="Description"
                 />
               </div>
               <div className="flex items-center flex-col gap-3">

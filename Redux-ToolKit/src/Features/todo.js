@@ -72,7 +72,8 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const loadTodos = () => {
   const savedTodos = localStorage.getItem("todos");
   return savedTodos ? JSON.parse(savedTodos) : [
-    { id: nanoid(), name: "Demo Task!" }
+    { id: nanoid(), name: "Demo Task!", text: "This is a demo task." },
+
   ];
 };
 
@@ -88,7 +89,8 @@ const todoSlice = createSlice({
     addTodo: (state, action) => {
       const newTodo = {
         id: nanoid(),
-        name: action.payload,
+        name: action.payload.input,
+        text: action.payload.text,
       };
       state.todoFeature.push(newTodo);
       localStorage.setItem("todos", JSON.stringify(state.todoFeature)); // Update localStorage
@@ -109,6 +111,7 @@ const todoSlice = createSlice({
       );
       if (todoToUpdate) {
         todoToUpdate.name = action.payload.name;
+        todoToUpdate.text = action.payload.text;
         localStorage.setItem("todos", JSON.stringify(state.todoFeature)); // Update localStorage
       }
     },
